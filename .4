@@ -1,0 +1,24 @@
+sequenceDiagram
+  participant browswer
+  participant server
+
+  browser->>server POST https://studies.cs.helinski.fi/exampleapp/new_note
+  activate server
+  server-->>browser: HTML DOCUMENT
+  deactivate server 
+
+  browser->>server GET https://studies.cs.helsinki.fi/exampleapp/notes
+  activate server 
+  server-->>browser: the css file
+  deactivate server
+
+  browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+  activate server
+  server-->>browser: the Javascript file
+  deactivate server
+
+  browser->>server: GET https://studies.cs.helinski.fi/exampleapp/data.json
+  activate server
+  server-->>browser: the data file 
+  deactivate server
+  
